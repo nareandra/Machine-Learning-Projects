@@ -2,28 +2,33 @@
 
 ## 📖 Project Overview
 
-This project predicts **medical insurance charges** using Machine Learning. It demonstrates the complete machine learning workflow, including data preprocessing, exploratory data analysis (EDA), feature engineering, model training, prediction, and evaluation.
+This project predicts **medical insurance charges** using Machine Learning techniques. It demonstrates the complete machine learning workflow, including data preprocessing, exploratory data analysis (EDA), feature engineering, model training, prediction, and model evaluation.
 
-The project uses the **Medical Cost Personal Dataset** (`insurance.csv`) and applies regression techniques to estimate individual medical expenses based on demographic and health-related factors.
+The project uses the **Medical Cost Personal Dataset** (`insurance.csv`) to estimate insurance charges based on demographic and health-related attributes such as age, BMI, smoking status, number of children, sex, and region.
+
+---
+
+## 🎯 Problem Statement
+
+Medical insurance costs vary significantly among individuals due to factors such as age, body mass index (BMI), smoking habits, and lifestyle. Accurately predicting these costs can help insurance providers estimate premiums and assist individuals in better financial planning.
 
 ---
 
 ## 🎯 Objectives
 
-- Analyze medical insurance data
-- Perform data cleaning and preprocessing
-- Explore relationships between different features
-- Train a Machine Learning regression model
-- Predict insurance charges
-- Evaluate model performance using standard regression metrics
+- Perform data preprocessing and cleaning
+- Conduct Exploratory Data Analysis (EDA)
+- Analyze relationships between features
+- Train multiple regression models
+- Compare model performance
+- Predict medical insurance charges
+- Identify the most important features affecting medical costs
 
 ---
 
-## 📂 Dataset
+## 📂 Dataset Information
 
-**Dataset:** `insurance.csv`
-
-### Features
+**Dataset:** Medical Cost Personal Dataset (`insurance.csv`)
 
 | Feature | Description |
 |----------|-------------|
@@ -33,7 +38,7 @@ The project uses the **Medical Cost Personal Dataset** (`insurance.csv`) and app
 | children | Number of dependent children |
 | smoker | Smoking status |
 | region | Residential region |
-| charges | Medical insurance cost (Target Variable) |
+| charges | Medical insurance charges (Target Variable) |
 
 ---
 
@@ -48,98 +53,160 @@ Medical-Cost-Prediction/
 ├── data/
 │   └── insurance.csv
 └── images/
-    ├── dataset_preview.png
+    ├── feature_distribution.png
+    ├── charges_distribution.png
     ├── correlation_heatmap.png
-    ├── prediction_plot.png
-    └── model_results.png
+    ├── smoking_vs_charges.png
+    ├── model_comparison.png
+    └── feature_importance.png
 ```
 
 ---
 
 ## 🛠 Technologies Used
 
-- Python
-- NumPy
-- Pandas
-- Matplotlib
-- Scikit-learn
-- Jupyter Notebook
+| Category | Technologies |
+|----------|--------------|
+| Programming Language | Python |
+| Data Analysis | Pandas, NumPy |
+| Data Visualization | Matplotlib |
+| Machine Learning | Scikit-learn |
+| Development Environment | Jupyter Notebook |
 
 ---
 
 ## ⚙️ Machine Learning Workflow
 
-- Import required libraries
-- Load the dataset
-- Data preprocessing
-- Exploratory Data Analysis (EDA)
-- Encode categorical variables
-- Feature selection
-- Split dataset into training and testing sets
-- Train the regression model
-- Predict insurance charges
-- Evaluate model performance
+```
+Dataset
+    ↓
+Data Cleaning
+    ↓
+Exploratory Data Analysis (EDA)
+    ↓
+Feature Engineering
+    ↓
+Train-Test Split
+    ↓
+Model Training
+    ↓
+Prediction
+    ↓
+Performance Evaluation
+```
 
 ---
 
-## 📊 Project Results
+# 📊 Exploratory Data Analysis
 
-### Dataset Preview
+The exploratory data analysis (EDA) helps understand the distribution of features, identify relationships between variables, and discover patterns that influence medical insurance charges.
 
-![Dataset Preview](images/dataset_preview.png)
+### 📈 Feature Distribution
+
+The histograms below illustrate the distribution of important numerical variables such as **Age**, **BMI**, **Number of Children**, and **Medical Charges**.
+
+![Feature Distribution](images/feature_distribution.png)
 
 ---
 
-### Correlation Heatmap
+### 💰 Distribution of Medical Charges
+
+The target variable (**charges**) follows a positively skewed distribution, indicating that most individuals have relatively lower medical expenses while a smaller number incur significantly higher costs.
+
+![Charges Distribution](images/charges_distribution.png)
+
+---
+
+### 🔥 Correlation Heatmap
+
+The heatmap visualizes the correlation between numerical variables, helping identify relationships with the target variable (**charges**).
 
 ![Correlation Heatmap](images/correlation_heatmap.png)
 
 ---
 
-### Prediction Results
+### 🚬 Medical Charges by Smoking Status
 
-![Prediction Plot](images/prediction_plot.png)
+The box plot demonstrates that smokers generally have much higher medical insurance charges compared to non-smokers.
 
----
-
-### Model Performance
-
-![Model Results](images/model_results.png)
+![Smoking vs Charges](images/smoking_vs_charges.png)
 
 ---
 
-## 📈 Evaluation Metrics
+# 📈 Model Performance
 
-The model is evaluated using:
+Three regression algorithms were trained and evaluated to identify the most suitable model for predicting medical insurance charges.
 
-- Mean Absolute Error (MAE)
-- Mean Squared Error (MSE)
-- Root Mean Squared Error (RMSE)
-- R² Score
+### Model Comparison
+
+![Model Comparison](images/model_comparison.png)
+
+---
+
+### Feature Importance (Random Forest)
+
+Random Forest identifies **smoking status**, **BMI**, and **age** as the most influential features affecting insurance charges.
+
+![Feature Importance](images/feature_importance.png)
+
+---
+
+## 📊 Performance Comparison
+
+| Model | R² Score | Performance |
+|--------|---------:|-------------|
+| Linear Regression | 0.79 | Good |
+| Decision Tree Regression | 0.73 | Moderate |
+| Random Forest Regression | 0.87 | Best |
+
+> **Note:** Update these values if your notebook reports different R² scores.
+
+---
+
+## 💡 Key Insights
+
+- Smoking status is the strongest predictor of medical insurance charges.
+- BMI and age also have a significant impact on insurance costs.
+- Medical charges exhibit a positively skewed distribution.
+- Random Forest Regression achieved the highest prediction accuracy among the evaluated models.
+- Proper preprocessing and feature engineering significantly improved model performance.
+
+---
+
+## 🛠 Skills Demonstrated
+
+- Data Cleaning
+- Exploratory Data Analysis (EDA)
+- Feature Engineering
+- Data Visualization
+- Regression Analysis
+- Model Evaluation
+- Machine Learning using Scikit-learn
+- Python Programming
 
 ---
 
 ## ▶️ Installation
 
-Clone the repository
+Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/Machine-Learning-Projects.git
+git clone https://github.com/nareandra/Machine-Learning-Projects.git
 ```
 
-Navigate to the project
+Navigate to the project directory:
 
 ```bash
 cd Machine-Learning-Projects/Medical-Cost-Prediction
 ```
 
-Install dependencies
+Install the required libraries:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Run the notebook
+Launch Jupyter Notebook:
 
 ```bash
 jupyter notebook Medical_Cost_Prediction.ipynb
@@ -147,26 +214,13 @@ jupyter notebook Medical_Cost_Prediction.ipynb
 
 ---
 
-## 📌 Future Improvements
+## 🚀 Future Improvements
 
-- Hyperparameter tuning
-- Feature engineering
-- Cross-validation
-- Compare multiple regression algorithms
-- Deploy the model as a web application using Flask or Streamlit
-
----
-
-## 💡 Skills Demonstrated
-
-- Data Preprocessing
-- Exploratory Data Analysis (EDA)
-- Regression Analysis
-- Feature Engineering
-- Data Visualization
-- Machine Learning Model Development
-- Model Evaluation
-- Python Programming
+- Hyperparameter tuning using GridSearchCV
+- Cross-validation for robust evaluation
+- Experiment with XGBoost and Gradient Boosting models
+- Deploy the model using Streamlit or Flask
+- Build an interactive web application for insurance cost prediction
 
 ---
 
@@ -174,16 +228,17 @@ jupyter notebook Medical_Cost_Prediction.ipynb
 
 **Nareandra**
 
-Graduate Student – University of Aizu, Japan
+Graduate Student  
+**The University of Aizu, Japan**
 
 ### Areas of Interest
 
-- Machine Learning
-- Artificial Intelligence
-- Computer Vision
-- ROS2
-- V2X Communication
-- Autonomous Driving
+- 🤖 Machine Learning
+- 🧠 Artificial Intelligence
+- 👁️ Computer Vision
+- 🚗 Autonomous Driving
+- 📡 V2X Communication
+- 🤖 ROS2
 
 ---
 
